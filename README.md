@@ -46,75 +46,78 @@ automatic scale-out and scale-in behavior.
 
 ## Technologies Used
 
-AWS
-Amazon EC2
-Application Load Balancer
-Auto Scaling Group
-Amazon RDS MySQL
-Amazon VPC
-Security Groups
-Amazon Machine Image (AMI)
-Launch Template
+1. AWS
+2. Amazon EC2
+3. Application Load Balancer
+4. Auto Scaling Group
+5. Amazon RDS MySQL
+6. Amazon VPC
+7. Security Groups
+8. Amazon Machine Image (AMI)
+9. Launch Template
 
 ## Application
 
-Python
-Flask
-Gunicorn
-MySQL
-HTML
-CSS
-JavaScript
+1. Python
+2. Flask
+3. Gunicorn
+4. MySQL
+5. HTML
+6. CSS
+7. JavaScript
 
 ## DevOps / Testing
-Docker
-Locust
-Linux
-systemd
+1.Docker
+2.Locust
+3.Linux
+4.systemd
 
 ## Application
 
 The Flask application provides:
 
-Product listing
-Product search
-Shopping cart API
-Health check endpoint
-Web-based product interface
+1. Product listing
+2. Product search
+3. Shopping cart API
+4. Health check endpoint
+5. Web-based product interface
 
 ## API Endpoints
 
-GET  /
-GET  /health
-GET  /api/products
-GET  /api/search?q=<query>
-POST /api/cart
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/` | ShopScale home page |
+| GET | `/health` | Application and database health check |
+| GET | `/api/products` | Get all products |
+| GET | `/api/search?q=` | Search products |
+| POST | `/api/cart` | Add product to cart |
 
 ## Deployment Process
-Launch Ubuntu EC2 instance.
-Install Python and required packages.
-Create Python virtual environment.
-Deploy Flask application.
-Configure RDS MySQL.
-Import database schema and seed data.
-Configure environment variables.
-Configure Gunicorn with systemd.
-Create a custom AMI.
-Create an Application Load Balancer.
-Create a Target Group with /health checks.
-Create a Launch Template.
-Create the Auto Scaling Group.
-Configure CPU target tracking.
-Verify ALB to EC2 to RDS connectivity.
+
+1. Launch Ubuntu EC2 instance.
+2. Install Python and required packages.
+3. Create Python virtual environment.
+4. Deploy Flask application.
+5. Configure RDS MySQL.
+6. Import database schema and seed data.
+7. Configure environment variables.
+8. Configure Gunicorn with systemd.
+9. Create a custom AMI.
+10. Create an Application Load Balancer.
+11. Create a Target Group with `/health` checks.
+12. Create a Launch Template.
+13. Create the Auto Scaling Group.
+14. Configure CPU target tracking.
+15. Verify ALB → EC2 → RDS connectivity.
 
 ## Future Improvements
 
-HTTPS using ACM
-Route 53 custom domain
-AWS Secrets Manager
-CloudWatch dashboards and alarms
-CI/CD using GitHub Actions
-Infrastructure as Code using Terraform
-Containerized application deployment
-Amazon ECS/EKS
-HTTPS-only ALB configuration
+1. HTTPS using ACM
+2. Route 53 custom domain
+3. AWS Secrets Manager
+4. CloudWatch dashboards and alarms
+5. CI/CD using GitHub Actions
+6. Infrastructure as Code using Terraform
+7. Containerized application deployment
+8. Amazon ECS/EKS
+9. HTTPS-only ALB configuration
