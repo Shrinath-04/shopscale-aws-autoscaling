@@ -1,0 +1,23 @@
+[Unit]
+Description=ShopScale Flask Application
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/app
+EnvironmentFile=/etc/shopscale.env
+
+ExecStart=/app/venv/bin/gunicorn \
+    --workers 4 \
+    --bind 0.0.0.0:80 \
+    --user ubuntu \
+    --group ubuntu \
+    app:app
+
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
